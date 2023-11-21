@@ -7,7 +7,7 @@ export default function LandingPage() {
 
   const handelClick = () => {
     console.log("clicking continue button on landing page");
-    navlink("/home");
+    navlink("home");
   };
   return (
     <div className="h-screen w-screen">

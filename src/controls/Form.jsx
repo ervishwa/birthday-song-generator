@@ -3,9 +3,11 @@ import * as Yup from "yup";
 import Button from "./Button";
 import { useState } from "react";
 import OtpModal from "../components/OtpModal";
+import { useNavigate } from "react-router-dom";
 
 export default function Form() {
   const [isOtpModalOpen, setIsOtpModalOpen] = useState(false);
+  const navigate = useNavigate();
   // Formik configuration
   const formik = useFormik({
     initialValues: {
@@ -44,6 +46,7 @@ export default function Form() {
 
     // Close the OTP modal
     setIsOtpModalOpen(false);
+    navigate("/info");
   };
 
   return (
