@@ -5,7 +5,7 @@ const getThemeClasses = (theme) => {
 
   if (theme === "primary") {
     themeClasses =
-      "bg-pale-yellow text-indigo-900 rounded-3xl border border-primary-500 hover:bg-primary-700 hover:border-primary-700 focus:ring-4 focus:ring-primary-100 disabled:bg-primary-200 disabled:border-primary-200";
+      "bg-pale-yellow text-indigo-900 rounded-3xl";
   } else if (theme === "secondary") {
     themeClasses = "bg-pale-yellow text-indigo-900 rounded-lg";
   } else if (theme === "secondary-color") {

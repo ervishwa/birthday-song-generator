@@ -14,7 +14,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-blue-10 px-6 flex justify-between items-center gap-12">
+    <div className="bg-blue-10 px-6 flex justify-between items-center gap-12 sticky top-0 z-10">
       <div className="flex items-center justify-center">
         <img className="h-12 md:h-8" src={cateborylogo} alt="" />
         <img className="h-32 md:h-20" src={logo2} alt="" />
