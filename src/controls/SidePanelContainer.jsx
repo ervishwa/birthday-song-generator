@@ -10,7 +10,7 @@ export default function SidePanelContainer({
         onClick={handelClick}
       />
       <div
-        className={`fixed h-screen w-${widthPercentage} md:w-1/5 shadow-xs right-0 top-0 z-10 bg-white overflow-auto pb-6`}
+        className={`fixed h-screen w-${widthPercentage} md:w-1/5 right-0 top-0 z-10 bg-white overflow-auto pb-6`}
       >
         {children}
       </div>

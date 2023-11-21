@@ -11,6 +11,6 @@ module.exports = {
         "blue-10": "rgb(46,4,109)",
       },
     },
-    plugins: [],
+    plugins: [require('flowbite/plugin')],
   },
 };

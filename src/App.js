@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LandingPage from './pages/landing-page'
 import Home from './pages/home-page'
+import './App.css';
 
 export function App() {
   return (
