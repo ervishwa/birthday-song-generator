@@ -16,6 +16,7 @@ import male from "../ui-images/Icons/male.png";
 import female from "../ui-images/Icons/female.png";
 import Button from "../controls/Button";
 import asset1 from "../ui-images/asset-1.png";
+import { useNavigate } from "react-router-dom";
 
 const Mood = {
   Happy: happy,
@@ -38,11 +39,14 @@ const singerType = {
   Female: female,
 };
 
-const handelClick = () => {
-  console.log("hello from user-choices-page");
-};
-
 export default function UserChoicePage() {
+  const navigate = useNavigate();
+
+  const handelClick = () => {
+    console.log("hello from user-choices-page");
+    navigate("/moreInfo");
+  };
+
   return (
     <div className="bg-bg-landing h-full w-screen bg-cover bg-no-repeat text-center p-2 relative">
       <div className="flex md:justify-around">
