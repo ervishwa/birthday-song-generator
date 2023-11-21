@@ -4,8 +4,11 @@ import Button from "./Button";
 import * as Yup from "yup";
 import Dropdown from "./DropDown";
 import tune from "../ui-images/purple-tone.png";
+import { useNavigate } from "react-router-dom";
 
 export default function UserInfoForm() {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       fullName: "xxxxx xxxx xxxxxx",
@@ -26,6 +29,7 @@ export default function UserInfoForm() {
     onSubmit: (values) => {
       console.log("Form data submitted:", values);
       // You can handle the form submission logic here
+      navigate("/userchoice");
     },
   });
   const genderOptions = ["Male", "Female", "Other"];

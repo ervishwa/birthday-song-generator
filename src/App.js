@@ -5,6 +5,7 @@ import Home from "./pages/home-page";
 import "./App.css";
 import InfoPage from "./pages/info-page";
 import Layout from "./components/Layout";
+import UserChoicePage from "./pages/user-choices-page";
 
 export function App() {
   return (
@@ -14,6 +15,7 @@ export function App() {
           <Route index element={<LandingPage />}></Route>
           <Route path="home" element={<Home />}></Route>
           <Route path="info" element={<InfoPage />}></Route>
+          <Route path="userchoice" element={<UserChoicePage />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -4,8 +4,7 @@ const getThemeClasses = (theme) => {
   let themeClasses = "";
 
   if (theme === "primary") {
-    themeClasses =
-      "bg-pale-yellow text-indigo-900 rounded-3xl";
+    themeClasses = "bg-pale-yellow text-indigo-900 rounded-3xl";
   } else if (theme === "secondary") {
     themeClasses = "bg-pale-yellow text-indigo-900 rounded-lg";
   } else if (theme === "secondary-color") {
