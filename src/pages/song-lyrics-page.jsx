@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserContextProvider";
 import axios from "axios";
 import Loader from "../components/Loader";
+import progressbar4 from "../ui-images/progress-bar4.png";
 
 export default function LyricsPage() {
   const [isloading, setIsLoading] = useState(false);
@@ -27,7 +28,7 @@ export default function LyricsPage() {
     navigate("/download");
   };
 
-  const url = "http://localhost:5050/generate-song-lyrics";
+  const url = "http://localhost:5050/getlyrics";
 
   const getdata = async () => {
     setIsLoading(true);
@@ -42,7 +43,8 @@ export default function LyricsPage() {
         favouriteMovie,
         favouriteSport,
       });
-      const lyrics = response.data.lyrics;
+      console.log(response);
+      const lyrics = response.data.data;
       setData(lyrics);
     } catch (err) {
       console.log(err.message);
@@ -74,13 +76,21 @@ export default function LyricsPage() {
   }
   return (
     <div className="p-4 text-center">
-      <p className="text-white text-3xl m-4">Your song's lyrics are ready!</p>
+      <img src={progressbar4} className="mx-auto" alt="" />
+      <p className="text-white text-3xl m-4 font-gibsonsemibold">
+        Your song's lyrics are ready!
+      </p>
       <Button name="Version 1" theme="primary" size="xs"></Button>
-      <div className="bg-white text-blue-950 text-2xl overflow-scroll h-[600px] rounded-xl p-8 text-start m-4">
+      <div className="bg-white text-2xl overflow-scroll h-[600px] rounded-xl p-8 text-start m-4 font-gibsonregular text-blue-10">
         {data}
       </div>
       <div className="flex gap-2 mt-16">
-        <Button name="Recreate Lyrics" theme="tertiary" size="sm" />
+        <Button
+          name="Recreate Lyrics"
+          theme="tertiary"
+          size="sm"
+          onClick={getdata}
+        />
         <Button
           name="Create Song"
           theme="primary"

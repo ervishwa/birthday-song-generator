@@ -7,6 +7,7 @@ import celebrationbg from "../ui-images/celebration-bg-hashtag.png";
 import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import playbutton from "../ui-images/play-button.png";
 import Button from "../controls/Button";
+import progressbar5 from "../ui-images/progress-bar5.png";
 import { useNavigate } from "react-router-dom";
 
 export default function DownloadPage() {
@@ -17,6 +18,7 @@ export default function DownloadPage() {
   };
   return (
     <div className="p-5">
+      <img src={progressbar5} className="mx-auto" alt="" />
       <p className="text-3xl text-white text-center m-5">
         Your unique song is ready!
       </p>
@@ -27,7 +29,7 @@ export default function DownloadPage() {
           <img src={balloon} className="h-20" alt="" />
         </div>
         <div className="border border-yellow-500 flex flex-col items-center rounded-3xl overflow-hidden">
-          <p className="text-yellow-400 text-center mt-8">
+          <p className="text-pale-yellow text-center mt-8">
             Happy Birthday Ronit!
           </p>
           <div className="flex flex-col justify-center items-center relative mb-8">
@@ -35,7 +37,7 @@ export default function DownloadPage() {
             <img
               src={playbutton}
               alt=""
-              className="absolute z-10 top-[230px] h-28"
+              className="absolute top-[180px] h-20"
             />
             <p className="text-white">A song for you made by Rhea</p>
           </div>
@@ -45,11 +47,11 @@ export default function DownloadPage() {
           </p>
 
           <div className="flex mt-8 w-full  overflow-hidden">
-            <div className="border-r border-r-blue-800 text-center flex-1 bg-yellow-500 p-5 flex justify-center gap-2 items-center">
+            <div className="border-r border-r-blue-800 text-center flex-1 bg-pale-yellow p-5 flex justify-center gap-2 items-center">
               <p>Share</p>
               <ShareRoundedIcon />
             </div>
-            <div className="text-center flex-1 bg-yellow-500 p-5 flex justify-center gap-2 items-center">
+            <div className="text-center flex-1 bg-pale-yellow p-5 flex justify-center gap-2 items-center">
               <p>Download</p>
               <span class="material-symbols-outlined">download</span>
             </div>

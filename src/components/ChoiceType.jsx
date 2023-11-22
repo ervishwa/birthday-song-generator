@@ -13,7 +13,7 @@ export default function ChoiceType({ choices, choicetype, singer }) {
   return (
     <div className="m-4 border-4 border-pale-yellow rounded-3xl mb-16">
       <div className="bg-pale-yellow h-8 rounded-t-xl">
-        <p className="text-blue-900 font-gibsonsemibold text-lg text-blue-10">
+        <p className="font-gibsonsemibold text-lg text-blue-10">
           {choicetype}
         </p>
       </div>
