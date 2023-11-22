@@ -40,7 +40,7 @@ export default function OtpModal({ isOpen, onRequestClose, onSubmit }) {
                 value={digit}
                 onChange={(e) => handleOtpChange(index, e.target.value)}
                 ref={otpInputRefs[index]}
-                className="bg-blue-10 w-12 h-12 rounded text-center appearance-none"
+                className="bg-blue-10 w-12 h-12 rounded text-center appearance-none text-white"
               />
             ))}
           </div>
