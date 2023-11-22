@@ -3,11 +3,12 @@ import Button from "../controls/Button";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserContextProvider";
 import axios from "axios";
-
-const tempdata = "lorem2dsjdnsjdnsdnsdnsjdsjkndjdnsd";
+import Loader from "../components/Loader";
 
 export default function LyricsPage() {
-  const [data, setData] = useState(tempdata);
+  const [isloading, setIsLoading] = useState(false);
+  const [data, setData] = useState("");
+  const [err, setError] = useState("");
 
   const {
     name,
@@ -26,12 +27,29 @@ export default function LyricsPage() {
     navigate("/download");
   };
 
-  const url = "";
+  const url = "http://localhost:5050/generate-song-lyrics";
 
   const getdata = async () => {
-    const data = await axios.get(url);
-    console.log(data);
-    setData(data);
+    setIsLoading(true);
+    try {
+      const response = await axios.post(url, {
+        name,
+        gender,
+        petName,
+        whatmakesAngry,
+        funniestThing,
+        whatMakeSmile,
+        favouriteMovie,
+        favouriteSport,
+      });
+      const lyrics = response.data.lyrics;
+      setData(lyrics);
+    } catch (err) {
+      console.log(err.message);
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -45,9 +63,15 @@ export default function LyricsPage() {
       favouriteMovie,
       favouriteSport
     );
-    //call the gedata function here.
+    getdata();
   }, []);
 
+  if (isloading) {
+    return <Loader />;
+  }
+  if (err) {
+    return <h1>Something went Wrong try Again.. Please</h1>;
+  }
   return (
     <div className="p-4 text-center">
       <p className="text-white text-3xl m-4">Your song's lyrics are ready!</p>
