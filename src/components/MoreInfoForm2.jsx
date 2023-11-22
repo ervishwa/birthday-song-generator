@@ -14,7 +14,7 @@ export default function MorewInfoForm2() {
     },
     onSubmit: (values) => {
       console.log("Form data submitted:", values);
-      navigate("/userchoice");
+      navigate("/lyrics");
     },
   });
 

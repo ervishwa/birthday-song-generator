@@ -27,7 +27,7 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
     onSubmit: (values) => {
       console.log("Form data submitted:", values);
       // You can handle the form submission logic here
-      navigate("/userchoice");
+      navigate("/lyrics");
     },
   });
 

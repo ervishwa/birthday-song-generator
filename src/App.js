@@ -7,6 +7,8 @@ import InfoPage from "./pages/info-page";
 import Layout from "./components/Layout";
 import UserChoicePage from "./pages/user-choices-page";
 import MoreInfo from "./pages/more-info-page";
+import LyricsPage from "./pages/song-lyrics-page";
+import Loader from "./components/Loader";
 
 export function App() {
   return (
@@ -18,6 +20,9 @@ export function App() {
           <Route path="info" element={<InfoPage />}></Route>
           <Route path="userchoice" element={<UserChoicePage />}></Route>
           <Route path="moreInfo" element={<MoreInfo />}></Route>
+          <Route path="lyrics" element={<LyricsPage />}></Route>
+          <Route path="moreInfo" element={<MoreInfo />}></Route>
+          <Route path="loader" element={<Loader />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
