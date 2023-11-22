@@ -8,6 +8,7 @@ import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import playbutton from "../ui-images/play-button.png";
 import Button from "../controls/Button";
 import progressbar5 from "../ui-images/progress-bar5.png";
+import birthdaySong from "../audio/birthday-song.mp3";
 import { useNavigate } from "react-router-dom";
 
 export default function DownloadPage() {
@@ -16,6 +17,24 @@ export default function DownloadPage() {
   const handelCreateAgain = () => {
     navigate("/info");
   };
+
+  const handleDownload = async () => {
+    try {
+      const response = await fetch(birthdaySong);
+      const audioBlob = await response.blob();
+      const audioBlobUrl = URL.createObjectURL(audioBlob);
+      const downloadLink = document.createElement("a");
+      downloadLink.href = audioBlobUrl;
+      downloadLink.download = "birthday-song.mp3";
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      URL.revokeObjectURL(audioBlobUrl);
+    } catch (error) {
+      console.error("Error downloading the song:", error);
+    }
+  };
+
   return (
     <div className="p-5">
       <img src={progressbar5} className="mx-auto" alt="" />
@@ -52,7 +71,7 @@ export default function DownloadPage() {
               <ShareRoundedIcon />
             </div>
             <div className="text-center flex-1 bg-pale-yellow p-5 flex justify-center gap-2 items-center">
-              <p>Download</p>
+              <p onClick={handleDownload}>Download</p>
               <span class="material-symbols-outlined">download</span>
             </div>
           </div>
