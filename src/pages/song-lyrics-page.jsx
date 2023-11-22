@@ -5,7 +5,7 @@ export default function LyricsPage() {
   const navigate = useNavigate();
 
   const createSong = () => {
-    navigate("/loader");
+    navigate("/download");
   };
   return (
     <div className="p-4 text-center">
