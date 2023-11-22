@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import Button from "../controls/Button";
+import { UserContext } from "../context/UserContextProvider";
 
 export default function MorewInfoForm2() {
   const navigate = useNavigate();
+  
+  const { setWhatMakeSmile, setFavouriteMovie, setFavouriteSport } =
+  useContext(UserContext);
+
 
   const formik = useFormik({
     initialValues: {
@@ -14,6 +19,9 @@ export default function MorewInfoForm2() {
     },
     onSubmit: (values) => {
       console.log("Form data submitted:", values);
+      setWhatMakeSmile(values.whatMakeSmile);
+      setFavouriteMovie(values.favouriteMovie);
+      setFavouriteSport(values.favouriteSport);
       navigate("/lyrics");
     },
   });

@@ -7,8 +7,14 @@ import celebrationbg from "../ui-images/celebration-bg-hashtag.png";
 import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import playbutton from "../ui-images/play-button.png";
 import Button from "../controls/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function DownloadPage() {
+  const navigate = useNavigate();
+
+  const handelCreateAgain = () => {
+    navigate("/info");
+  };
   return (
     <div className="p-5">
       <p className="text-3xl text-white text-center m-5">
@@ -57,7 +63,12 @@ export default function DownloadPage() {
       </div>
       <div className="mt-4 flex gap-2">
         <Button name="Redeem Gift" theme="primary" size="sm" />
-        <Button name="Create Again" theme="primary" size="sm" />
+        <Button
+          name="Create Again"
+          theme="primary"
+          size="sm"
+          onClick={handelCreateAgain}
+        />
       </div>
     </div>
   );

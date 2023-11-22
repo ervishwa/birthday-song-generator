@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useFormik } from "formik";
 import Button from "./Button";
 import * as Yup from "yup";
 import Dropdown from "./DropDown";
 import tune from "../ui-images/purple-tone.png";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContextProvider";
 
 export default function UserInfoForm() {
   const navigate = useNavigate();
+
+  const { setName, setGender } = useContext(UserContext);
 
   const formik = useFormik({
     initialValues: {
@@ -29,6 +32,8 @@ export default function UserInfoForm() {
     onSubmit: (values) => {
       console.log("Form data submitted:", values);
       // You can handle the form submission logic here
+      setName(values.fullName);
+      setGender(values.gender);
       navigate("/userchoice");
     },
   });

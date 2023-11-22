@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import Button from "../controls/Button";
+import { UserContext } from "../context/UserContextProvider";
 
 export default function MorewInfoForm1({ handelAnswerMore }) {
   const navigate = useNavigate();
+
+  const { setPetName, setWhatmakesAngry, setFunniestThing } =
+    useContext(UserContext);
 
   const formik = useFormik({
     initialValues: {
@@ -27,6 +31,9 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
     onSubmit: (values) => {
       console.log("Form data submitted:", values);
       // You can handle the form submission logic here
+      setPetName(values.petName);
+      setWhatmakesAngry(values.makesAngry);
+      setFunniestThing(values.funniestThing);
       navigate("/lyrics");
     },
   });
