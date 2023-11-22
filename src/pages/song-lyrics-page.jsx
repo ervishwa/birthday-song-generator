@@ -28,7 +28,7 @@ export default function LyricsPage() {
     navigate("/download");
   };
 
-  const url = "http://localhost:5050/getlyrics";
+  const url = "https://birthday-song-generator.onrender.com/getlyrics";
 
   const getdata = async () => {
     setIsLoading(true);
