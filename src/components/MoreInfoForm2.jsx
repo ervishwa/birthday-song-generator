@@ -6,10 +6,9 @@ import { UserContext } from "../context/UserContextProvider";
 
 export default function MorewInfoForm2() {
   const navigate = useNavigate();
-  
-  const { setWhatMakeSmile, setFavouriteMovie, setFavouriteSport } =
-  useContext(UserContext);
 
+  const { setWhatMakeSmile, setFavouriteMovie, setFavouriteSport } =
+    useContext(UserContext);
 
   const formik = useFormik({
     initialValues: {
@@ -29,7 +28,10 @@ export default function MorewInfoForm2() {
   return (
     <form className="w-4/5 mx-auto">
       <div className="mb-4 text-center">
-        <label htmlFor="whatMakeSmile" className="text-white text-xl ">
+        <label
+          htmlFor="whatMakeSmile"
+          className="text-white text-xl font-gibsonsemibold"
+        >
           What make them smile?
         </label>
         <input
@@ -39,14 +41,17 @@ export default function MorewInfoForm2() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.whatMakeSmile}
-          className="w-full my-2 px-5 py-4 rounded-3xl"
+          className="w-full my-2 px-5 py-4 rounded-3xl font-gibsonsemibold text-gray-400"
         />
         {formik.touched.whatMakeSmile && formik.errors.whatMakeSmile ? (
           <div className="text-red-500">{formik.errors.whatMakeSmile}</div>
         ) : null}
       </div>
       <div className="mb-4 text-center">
-        <label htmlFor="favouriteMovie" className="text-white text-xl">
+        <label
+          htmlFor="favouriteMovie"
+          className="text-white text-xl font-gibsonsemibold"
+        >
           What is their favourite movie?
         </label>
         <input
@@ -56,14 +61,17 @@ export default function MorewInfoForm2() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.favouriteMovie}
-          className="w-full my-2 px-5 py-4 rounded-3xl"
+          className="w-full my-2 px-5 py-4 rounded-3xl font-gibsonsemibold text-gray-400"
         />
         {formik.touched.favouriteMovie && formik.errors.favouriteMovie ? (
           <div className="text-red-500">{formik.errors.favouriteMovie}</div>
         ) : null}
       </div>
       <div className="mb-4 text-center">
-        <label htmlFor="favouriteSport" className="text-white text-xl">
+        <label
+          htmlFor="favouriteSport"
+          className="text-white text-xl font-gibsonsemibold"
+        >
           Their favourite sport.
         </label>
         <input
@@ -73,7 +81,7 @@ export default function MorewInfoForm2() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.favouriteSport}
-          className="w-full my-2 px-5 py-4 rounded-3xl"
+          className="w-full my-2 px-5 py-4 rounded-3xl font-gibsonsemibold text-gray-400"
         />
         {formik.touched.favouriteSport && formik.errors.favouriteSport ? (
           <div className="text-red-500">{formik.errors.favouriteSport}</div>
@@ -88,7 +96,9 @@ export default function MorewInfoForm2() {
           theme="primary"
         />
       </div>
-      <p className="text-white mt-1">For enhanced personalisation</p>
+      <p className="text-white mt-1 font-gibsonregular">
+        For enhanced personalisation
+      </p>
     </form>
   );
 }

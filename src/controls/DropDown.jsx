@@ -1,8 +1,9 @@
 // CustomDropdown.jsx
 
 import React, { useState } from "react";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-const Dropdown = ({ options, selectedOption, onSelect }) => {
+export default function Dropdown({ options, selectedOption, onSelect }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleOptionSelect = (option) => {
@@ -13,10 +14,11 @@ const Dropdown = ({ options, selectedOption, onSelect }) => {
   return (
     <div className="relative rounded-3xl bg-white mt-2">
       <div
-        className=" py-4 px-4 cursor-pointerrounded-md text-start"
+        className=" py-4 px-4 cursor-pointerrounded-md text-start flex justify-between font-gibsonsemibold"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
         {selectedOption || "Select an option"}
+        <ArrowDropDownIcon />
       </div>
       {isDropdownOpen && (
         <ul className="options-list absolute w-full mt-2 bg-white border border-gray-300 rounded-md shadow z-10">
@@ -37,6 +39,4 @@ const Dropdown = ({ options, selectedOption, onSelect }) => {
       )}
     </div>
   );
-};
-
-export default Dropdown;
+}

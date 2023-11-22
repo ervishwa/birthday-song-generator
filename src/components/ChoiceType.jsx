@@ -5,15 +5,17 @@ export default function ChoiceType({ choices, choicetype, singer }) {
 
   const getClasses = (choiceName) => {
     if (choiceName === selectedChoice) {
-      return "bg-yellow-400";
+      return "bg-pale-yellow";
     } else {
       return "bg-white";
     }
   };
   return (
-    <div className="m-4 border-4 border-yellow-400 rounded-3xl mb-16">
-      <div className="bg-yellow-400 h-8 rounded-t-xl">
-        <p className="text-blue-900">{choicetype}</p>
+    <div className="m-4 border-4 border-pale-yellow rounded-3xl mb-16">
+      <div className="bg-pale-yellow h-8 rounded-t-xl">
+        <p className="text-blue-900 font-gibsonsemibold text-lg text-blue-10">
+          {choicetype}
+        </p>
       </div>
       <div className="flex justify-around p-3">
         {Object.keys(choices).map((currChoice) => {
@@ -35,7 +37,7 @@ export default function ChoiceType({ choices, choicetype, singer }) {
                     alt=""
                   />
                 </div>
-                <p className="text-white">{currChoice}</p>
+                <p className="text-white font-gibsonsemibold">{currChoice}</p>
               </div>
             );
           }
@@ -52,7 +54,7 @@ export default function ChoiceType({ choices, choicetype, singer }) {
               >
                 <img className="h-12" src={`${choices[currChoice]}`} alt="" />
               </div>
-              <p className="text-white">{currChoice}</p>
+              <p className="text-white font-gibsonsemibold">{currChoice}</p>
             </div>
           );
         })}

@@ -5,12 +5,12 @@ const getThemeClasses = (theme) => {
 
   if (theme === "primary") {
     themeClasses =
-      "bg-pale-yellow text-indigo-900 rounded-3xl disabled:text-gray-400";
+      "bg-pale-yellow text-indigo-900 rounded-3xl disabled:text-gray-400 font-gibsonsemibold";
   } else if (theme === "secondary") {
-    themeClasses = "bg-pale-yellow text-indigo-900 rounded-lg";
+    themeClasses = "bg-pale-yellow text-indigo-900 rounded-lg disabled:bg-gray-400";
   } else if (theme === "tertiary") {
     themeClasses =
-      "bg-violet-400 text-white rounded-3xl disabled:text-gray-400 disabled:bg-gray-50";
+      "bg-violet-400 text-white rounded-3xl font-gibsonsemibold disabled:text-gray-400 disabled:bg-gray-50";
   } else if (theme === "primary-purple") {
     themeClasses = "border border-pink bg-pink text-white text-xs font-normal";
   }

@@ -16,6 +16,8 @@ import male from "../ui-images/Icons/male.png";
 import female from "../ui-images/Icons/female.png";
 import Button from "../controls/Button";
 import asset1 from "../ui-images/asset-1.png";
+import progressbar2 from "../ui-images/progress-bar2.png";
+
 import { useNavigate } from "react-router-dom";
 
 const Mood = {
@@ -49,6 +51,7 @@ export default function UserChoicePage() {
 
   return (
     <div className="bg-bg-landing h-full w-screen bg-cover bg-no-repeat text-center p-2 relative">
+      <img src={progressbar2} className="mx-auto my-2 mb-6" alt="" />
       <div className="flex md:justify-around">
         <img
           src={purpleMusicIcon}
@@ -56,7 +59,7 @@ export default function UserChoicePage() {
           alt=""
         />
         <div className="flex flex-col justify-center">
-          <p className="text-2xl text-white">
+          <p className="text-2xl text-white font-gibsonsemibold">
             What would you like their song's vibe to be?
           </p>
           <img src={headphone} alt="" />

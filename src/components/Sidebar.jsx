@@ -14,16 +14,16 @@ export default function Sidebar({ handelClick }) {
       </div>
       <div>
         <div className="p-6 border-y border-y-gray-400 text-right">
-          <p className="text-white">How To Participate</p>
+          <p className="text-white font-gibsonsemibold">How To Participate</p>
         </div>
         <div className="p-6 border-b border-b-gray-400 text-right">
-          <p className="text-white">Term & Conditions</p>
+          <p className="text-white font-gibsonsemibold">Term & Conditions</p>
         </div>
         <div className="p-6 border-b border-b-gray-400 text-right">
-          <p className="text-white">Privacy Policy</p>
+          <p className="text-white font-gibsonsemibold">Privacy Policy</p>
         </div>
         <div className="p-6 border-b border-b-gray-400 text-right">
-          <p className="text-white">Contact Us</p>
+          <p className="text-white font-gibsonsemibold">Contact Us</p>
         </div>
       </div>
       <div className="bg-white flex justify-center p-4">

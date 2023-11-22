@@ -8,30 +8,30 @@
   @font-face {
     font-family: 'GibsonBold';
     src: url('./fonts/Gibson-Bold.ttf') format('truetype');
-    font-weight: bold;
+    font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'gibsonitalic';
     src: url('./fonts/Gibson-Italic.ttf') format('truetype');
-    font-weight: bold;
+    font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'gibsonlight';
     src: url('./fonts/Gibson-Light.ttf') format('truetype');
-    font-weight: bold;
+    font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'gibsonregular';
     src: url('./fonts/Gibson-Regular.ttf') format('truetype');
-    font-weight: bold;
+    font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'gibsonsemibold';
     src: url('./fonts/Gibson-SemiBold.ttf') format('truetype');
-    font-weight: bold;
+    font-weight: normal;
     font-style: normal;
   }

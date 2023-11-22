@@ -14,7 +14,7 @@ export default function UserInfoForm() {
 
   const formik = useFormik({
     initialValues: {
-      fullName: "xxxxx xxxx xxxxxx",
+      fullName: "xxxxx xxxxxxxxxx",
       age: "",
       gender: "Male",
     },
@@ -30,8 +30,6 @@ export default function UserInfoForm() {
       gender: Yup.string().required("Gender is required"),
     }),
     onSubmit: (values) => {
-      console.log("Form data submitted:", values);
-      // You can handle the form submission logic here
       setName(values.fullName);
       setGender(values.gender);
       navigate("/userchoice");
@@ -48,7 +46,7 @@ export default function UserInfoForm() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.fullName}
-          className="w-full my-2 px-5 py-4 rounded-3xl"
+          className="w-full my-2 px-5 py-4 rounded-3xl font-gibsonlight"
         />
         {formik.touched.fullName && formik.errors.fullName ? (
           <div className="text-red-500">{formik.errors.fullName}</div>
@@ -56,7 +54,7 @@ export default function UserInfoForm() {
       </div>
 
       <div className="mb-4">
-        <label htmlFor="age" className="text-white text-xl">
+        <label htmlFor="age" className="text-white text-xl font-gibsonsemibold">
           How old they'll be this birthday
         </label>
         <input
@@ -66,14 +64,17 @@ export default function UserInfoForm() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={`${formik.values.age}`}
-          className="w-full my-2 px-5 py-4 rounded-3xl"
+          className="w-full my-2 px-5 py-4 rounded-3xl font-gibsonsemibold text-blue-10"
         />
         {formik.touched.age && formik.errors.age ? (
           <div className="text-red-500">{formik.errors.age}</div>
         ) : null}
       </div>
       <div className="mb-8">
-        <label htmlFor="gender" className="text-white text-xl">
+        <label
+          htmlFor="gender"
+          className="text-white text-xl font-gibsonsemibold"
+        >
           Gender
         </label>
         <Dropdown

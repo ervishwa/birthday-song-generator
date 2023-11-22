@@ -1,14 +1,11 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Button from "./Button";
-import { useState } from "react";
 import OtpModal from "../components/OtpModal";
 import { useNavigate } from "react-router-dom";
 
-export default function Form() {
-  const [isOtpModalOpen, setIsOtpModalOpen] = useState(false);
+export default function Form({ isOtpModalOpen, setIsOtpModalOpen }) {
   const navigate = useNavigate();
-  // Formik configuration
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -34,17 +31,12 @@ export default function Form() {
       ),
     }),
     onSubmit: (values) => {
-      // Handle form submission here
-      console.log("Form submitted with values:", values);
       setIsOtpModalOpen(true);
     },
   });
 
   const handleOtpSubmit = (enteredOtp) => {
-    // Perform OTP validation or further actions here
     console.log("Entered OTP:", enteredOtp);
-
-    // Close the OTP modal
     setIsOtpModalOpen(false);
     navigate("/info");
   };
@@ -60,11 +52,13 @@ export default function Form() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.phoneNumber}
-            className="w-full my-2 px-5 p-2 rounded-3xl"
+            className="w-full my-2 px-5 p-2 rounded-3xl font-gibsonregular"
             placeholder="Phone Number"
           />
           {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-            <div className="text-red-800">{formik.errors.phoneNumber}</div>
+            <div className="text-red-800 font-gibsonlight">
+              {formik.errors.phoneNumber}
+            </div>
           ) : null}
         </div>
         <div>
@@ -75,11 +69,13 @@ export default function Form() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.fullName}
-            className="w-full my-2 px-5 p-2 rounded-3xl"
+            className="w-full my-2 px-5 p-2 rounded-3xl font-gibsonregular"
             placeholder="Full Name"
           />
           {formik.touched.fullName && formik.errors.fullName ? (
-            <div className="text-red-800">{formik.errors.fullName}</div>
+            <div className="text-red-800 font-gibsonlight">
+              {formik.errors.fullName}
+            </div>
           ) : null}
         </div>
         <div>
@@ -90,17 +86,19 @@ export default function Form() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
-            className="w-full my-2 px-5 p-2 rounded-3xl"
+            className="w-full my-2 px-5 p-2 rounded-3xl font-gibsonregular"
             placeholder="Email ID"
           />
           {formik.touched.email && formik.errors.email ? (
-            <div className="text-red-800">{formik.errors.email}</div>
+            <div className="text-red-800 font-gibsonlight">
+              {formik.errors.email}
+            </div>
           ) : null}
         </div>
         <div className="m-2 py-2">
           <label
             htmlFor="acceptTerms"
-            className="text-white flex text-start items-center text-xs p-2"
+            className="text-white flex text-start items-center text-xs p-2 gibsonsemibold"
           >
             <input
               type="checkbox"
@@ -109,16 +107,18 @@ export default function Form() {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               checked={formik.values.acceptTerms}
-              className="appearance-none h-[0.6875rem] w-4 md:h-4 md:w-4 rounded-full bg-white mr-2 checked:bg-green-800 text-green-800"
+              className="appearance-none h-[0.6875rem] w-4 md:h-4 md:w-4 rounded-full bg-white mr-2 checked:bg-green-800 text-green-800 font-gibsonregular"
             />
             I accept Terms & Conditions and Privacy Policy of Mondelez (Cadbury)
           </label>
           {formik.touched.acceptTerms && formik.errors.acceptTerms ? (
-            <div className="text-red-800">{formik.errors.acceptTerms}</div>
+            <div className="text-red-800 font-gibsonlight">
+              {formik.errors.acceptTerms}
+            </div>
           ) : null}
         </div>
         <div className="m-2 py-2">
-          <label className="text-white flex text-start items-center text-xs p-2">
+          <label className="text-white flex text-start items-center text-xs p-2 font-gibsonsemibold">
             <input
               type="checkbox"
               id="receivePromotions"
@@ -133,7 +133,7 @@ export default function Form() {
           </label>
           {formik.touched.receivePromotions &&
           formik.errors.receivePromotions ? (
-            <div className="text-red-800">
+            <div className="text-red-800 font-gibsonlight">
               {formik.errors.receivePromotions}
             </div>
           ) : null}

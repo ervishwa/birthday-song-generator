@@ -13,9 +13,9 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
 
   const formik = useFormik({
     initialValues: {
-      petName: "xxxxx xxxx xxxxxx",
-      makesAngry: "xxxx xxx xxx",
-      funniestThing: "xxxx xxx xxxx",
+      petName: "xxxxxxxxxxxxxxx",
+      makesAngry: "xxxxxxxxxx",
+      funniestThing: "xxxxxxxxxxx",
     },
     validationSchema: Yup.object({
       petName: Yup.string()
@@ -29,8 +29,6 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
         .required("this Field is required"),
     }),
     onSubmit: (values) => {
-      console.log("Form data submitted:", values);
-      // You can handle the form submission logic here
       setPetName(values.petName);
       setWhatmakesAngry(values.makesAngry);
       setFunniestThing(values.funniestThing);
@@ -41,7 +39,10 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
   return (
     <form className="w-4/5 mx-auto">
       <div className="mb-4 text-center">
-        <label htmlFor="petName" className="text-white text-xl ">
+        <label
+          htmlFor="petName"
+          className="text-white text-xl font-gibsonsemibold"
+        >
           What's your pet name for them?
         </label>
         <input
@@ -51,14 +52,17 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.petName}
-          className="w-full my-2 px-5 py-4 rounded-3xl"
+          className="w-full my-2 px-5 py-4 rounded-3xl text-gray-400"
         />
         {formik.touched.petName && formik.errors.petName ? (
           <div className="text-red-500">{formik.errors.petName}</div>
         ) : null}
       </div>
       <div className="mb-4 text-center">
-        <label htmlFor="makesAngry" className="text-white text-xl">
+        <label
+          htmlFor="makesAngry"
+          className="text-white text-xl font-gibsonsemibold"
+        >
           What makes them angry?
         </label>
         <input
@@ -68,14 +72,17 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.makesAngry}
-          className="w-full my-2 px-5 py-4 rounded-3xl"
+          className="w-full my-2 px-5 py-4 rounded-3xl text-gray-400"
         />
         {formik.touched.makesAngry && formik.errors.makesAngry ? (
           <div className="text-red-500">{formik.errors.makesAngry}</div>
         ) : null}
       </div>
       <div className="mb-4 text-center">
-        <label htmlFor="funniestThing" className="text-white text-xl">
+        <label
+          htmlFor="funniestThing"
+          className="text-white text-xl font-gibsonsemibold"
+        >
           What is the funniest thing they do?
         </label>
         <input
@@ -85,13 +92,13 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.funniestThing}
-          className="w-full my-2 px-5 py-4 rounded-3xl"
+          className="w-full my-2 px-5 py-4 rounded-3xl text-gray-400"
         />
         {formik.touched.funniestThing && formik.errors.funniestThing ? (
           <div className="text-red-500">{formik.errors.funniestThing}</div>
         ) : null}
       </div>
-      <div className="flex gap-3">
+      <div className="flex gap-3 mt-8">
         <Button
           onClick={() => handelAnswerMore(true)}
           name="Answer More"
@@ -105,7 +112,9 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
           theme="primary"
         />
       </div>
-      <p className="text-white mt-1">For enhanced personalisation</p>
+      <p className="text-white mt-2 font-gibsonregular">
+        For enhanced personalisation
+      </p>
     </form>
   );
 }
