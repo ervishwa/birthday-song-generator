@@ -72,7 +72,7 @@ export default function DownloadPage() {
             </div>
             <div className="text-center flex-1 bg-pale-yellow p-5 flex justify-center gap-2 items-center">
               <p onClick={handleDownload}>Download</p>
-              <span class="material-symbols-outlined">download</span>
+              <span className="material-symbols-outlined">download</span>
             </div>
           </div>
         </div>
