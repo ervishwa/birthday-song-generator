@@ -43,8 +43,8 @@ export default function Form({ isOtpModalOpen, setIsOtpModalOpen }) {
 
   return (
     <>
-      <form onSubmit={formik.handleSubmit} className="w-1/2 mx-auto">
-        <div>
+      <form onSubmit={formik.handleSubmit} className="w-3/4 mx-auto">
+        <div className="my-1">
           <input
             type="number"
             id="phoneNumber"
@@ -61,7 +61,7 @@ export default function Form({ isOtpModalOpen, setIsOtpModalOpen }) {
             </div>
           ) : null}
         </div>
-        <div>
+        <div className="my-1">
           <input
             type="text"
             id="fullName"
@@ -78,7 +78,7 @@ export default function Form({ isOtpModalOpen, setIsOtpModalOpen }) {
             </div>
           ) : null}
         </div>
-        <div>
+        <div className="my-1">
           <input
             type="email"
             id="email"

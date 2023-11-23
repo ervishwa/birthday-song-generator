@@ -76,7 +76,7 @@ export default function LyricsPage() {
   }
   return (
     <div className="p-4 text-center">
-      <img src={progressbar4} className="mx-auto" alt="" />
+      <img src={progressbar4} className="mx-auto w-64" alt="" />
       <p className="text-white text-3xl m-4 font-gibsonsemibold">
         Your song's lyrics are ready!
       </p>
@@ -88,13 +88,13 @@ export default function LyricsPage() {
         <Button
           name="Recreate Lyrics"
           theme="tertiary"
-          size="sm"
+          size="xs"
           onClick={getdata}
         />
         <Button
           name="Create Song"
           theme="primary"
-          size="sm"
+          size="xs"
           onClick={createSong}
         />
       </div>

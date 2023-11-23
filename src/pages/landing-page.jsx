@@ -48,7 +48,10 @@ export default function LandingPage() {
               size={"sm"}
               onClick={handelClick}
             />
-            <p className="text-white mt-3 underline underline-offset-[5px] text-2xl cursor-pointer font-gibsonregular">
+            <p
+              className="text-white mt-3 underline underline-offset-[5px] text-2xl cursor-pointer font-gibsonregular"
+              onClick={handelClick}
+            >
               New signup
             </p>
           </div>

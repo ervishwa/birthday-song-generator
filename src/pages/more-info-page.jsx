@@ -9,8 +9,8 @@ import progressbar3 from "../ui-images/progress-bar3.png";
 export default function MoreInfo() {
   const [showMoreQuestion, setShowMoreQuestion] = useState(false);
   return (
-    <div>
-      <img src={progressbar3} className="mx-auto my-4" alt="" />
+    <div className="h-[92vh]">
+      <img src={progressbar3} className="mx-auto my-4 w-64" alt="" />
       <div className="flex justify-around md:justify-around mt-4">
         <img
           src={asset1}

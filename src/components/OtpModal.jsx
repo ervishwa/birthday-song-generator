@@ -30,7 +30,7 @@ export default function OtpModal({ isOpen, onRequestClose, onSubmit }) {
         <Modal.Header className="bg-white p-3 rounded-lg opacity-100 backdrop-blur-sm font-gibsonsemibold text-blue-10">
           Enter OTP
         </Modal.Header>
-        <Modal.Body className="bg-white">
+        <Modal.Body className="bg-white p-4">
           <div className="flex gap-2 justify-around p-4">
             {otp.map((digit, index) => (
               <input
@@ -40,7 +40,7 @@ export default function OtpModal({ isOpen, onRequestClose, onSubmit }) {
                 value={digit}
                 onChange={(e) => handleOtpChange(index, e.target.value)}
                 ref={otpInputRefs[index]}
-                className="bg-blue-10 w-12 h-12 rounded text-center appearance-none text-white"
+                className="bg-blue-10 w-8 h-8 rounded text-center appearance-none text-white"
               />
             ))}
           </div>

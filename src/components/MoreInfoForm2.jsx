@@ -87,12 +87,12 @@ export default function MorewInfoForm2() {
           <div className="text-red-500">{formik.errors.favouriteSport}</div>
         ) : null}
       </div>
-      <div className="flex gap-3">
-        <Button name="Answer More" size="sm" theme="tertiary" disabled />
+      <div className="flex gap-2">
+        <Button name="Answer More" size="xs" theme="tertiary" disabled />
         <Button
           onClick={formik.handleSubmit}
           name="Proceed"
-          size="sm"
+          size="xs"
           theme="primary"
         />
       </div>

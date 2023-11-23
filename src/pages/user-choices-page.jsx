@@ -51,11 +51,11 @@ export default function UserChoicePage() {
 
   return (
     <div className="bg-bg-landing h-full w-screen bg-cover bg-no-repeat text-center p-2 relative">
-      <img src={progressbar2} className="mx-auto my-2 mb-6" alt="" />
+      <img src={progressbar2} className="mx-auto my-2 mb-6 w-64" alt="" />
       <div className="flex md:justify-around">
         <img
           src={purpleMusicIcon}
-          className="h-16 relative bottom-[-350px]"
+          className="h-16 relative bottom-[-200px]"
           alt=""
         />
         <div className="flex flex-col justify-center">

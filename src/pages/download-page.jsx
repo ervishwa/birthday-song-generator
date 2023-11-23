@@ -36,13 +36,13 @@ export default function DownloadPage() {
   };
 
   return (
-    <div className="p-5">
-      <img src={progressbar5} className="mx-auto" alt="" />
+    <div className="p-2 h-[91vh]">
+      <img src={progressbar5} className="mx-auto w-64" alt="" />
       <p className="text-3xl text-white text-center m-5">
         Your unique song is ready!
       </p>
       <div className="flex">
-        <div className="flex flex-col justify-evenly px-5">
+        <div className="flex flex-col justify-evenly px-1">
           <img src={asset1} className="h-20" alt="" />
           <img src={purpleMusicIcon} className="h-20" alt="" />
           <img src={balloon} className="h-20" alt="" />
@@ -70,24 +70,27 @@ export default function DownloadPage() {
               <p>Share</p>
               <ShareRoundedIcon />
             </div>
-            <div className="text-center flex-1 bg-pale-yellow p-5 flex justify-center gap-2 items-center">
-              <p onClick={handleDownload}>Download</p>
+            <div
+              className="text-center flex-1 bg-pale-yellow p-5 flex justify-center gap-2 items-center"
+              onClick={handleDownload}
+            >
+              <p>Download</p>
               <span className="material-symbols-outlined">download</span>
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-evenly px-5">
+        <div className="flex flex-col justify-evenly px-1">
           <img src={balloon2} alt="" className="h-20" />
           <img src={yellowtone} alt="" className="h-20" />
           <img src={asset1} alt="" className="h-20" />
         </div>
       </div>
       <div className="mt-4 flex gap-2">
-        <Button name="Redeem Gift" theme="primary" size="sm" />
+        <Button name="Redeem Gift" theme="primary" size="xs" />
         <Button
           name="Create Again"
           theme="primary"
-          size="sm"
+          size="xs"
           onClick={handelCreateAgain}
         />
       </div>

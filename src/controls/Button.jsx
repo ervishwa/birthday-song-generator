@@ -21,7 +21,7 @@ const getThemeClasses = (theme) => {
 const getSizeClasses = (size) => {
   let sizeClasses = "";
   if (size === "xs") {
-    sizeClasses = "px-8 py-3 text-lg";
+    sizeClasses = "px-5 py-3 text-lg w-80";
   }
   if (size === "sm") {
     sizeClasses = "px-12 py-4 text-3xl";

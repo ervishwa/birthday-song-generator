@@ -7,7 +7,7 @@ import progressbar1 from "../ui-images/progress-bar1.png";
 export default function InfoPage() {
   return (
     <div className="bg-bg-landing h-screen w-screen bg-cover bg-no-repeat text-center p-2 relative">
-      <img className="mx-auto mb-6 mt-2" src={progressbar1} alt="" />
+      <img className="mx-auto mb-6 mt-2 w-64" src={progressbar1} alt="" />
       <p className="text-white text-xl font-gibsonsemibold">
         Tell us about your loved one...
       </p>

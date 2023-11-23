@@ -6,7 +6,7 @@ import rock from "../ui-images/Icons/rock.png";
 
 export default function Loader() {
   return (
-    <div className="p-5">
+    <div className="p-5 h-screen">
       <img className="ml-12 mt-20" src={asset1} alt="" />
       <p className="text-white text-3xl text-center my-4">
         Please wait while we compose your song...

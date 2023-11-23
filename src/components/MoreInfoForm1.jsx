@@ -98,17 +98,17 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
           <div className="text-red-500">{formik.errors.funniestThing}</div>
         ) : null}
       </div>
-      <div className="flex gap-3 mt-8">
+      <div className="flex mt-8 w-full gap-2">
         <Button
           onClick={() => handelAnswerMore(true)}
           name="Answer More"
-          size="sm"
+          size="xs"
           theme="tertiary"
         />
         <Button
           onClick={formik.handleSubmit}
           name="Proceed"
-          size="sm"
+          size="xs"
           theme="primary"
         />
       </div>
