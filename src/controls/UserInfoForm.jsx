@@ -14,7 +14,7 @@ export default function UserInfoForm() {
 
   const formik = useFormik({
     initialValues: {
-      fullName: "xxxxx xxxxxxxxxx",
+      fullName: "",
       age: "",
       gender: "Male",
     },
@@ -46,6 +46,7 @@ export default function UserInfoForm() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.fullName}
+          placeholder="xxxx xxxxxxxxxxxxx"
           className="w-full my-2 px-5 py-4 rounded-3xl font-gibsonlight"
         />
         {formik.touched.fullName && formik.errors.fullName ? (

@@ -40,7 +40,7 @@ export default function DownloadPage() {
   };
 
   return (
-    <div className="p-2 h-full">
+    <div className="p-2 h-screen">
       <img src={progressbar5} className="mx-auto w-64" alt="" />
       <p className="text-3xl text-white text-center m-5">
         Your unique song is ready!
