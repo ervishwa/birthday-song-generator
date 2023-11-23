@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div
-      className={`bg-bg-landing w-screen h-screen bg-cover bg-no-repeat text-center p-2 relative ${
+      className={`bg-bg-landing w-screen h-auto bg-cover bg-no-repeat text-center p-2 relative ${
         isOtpModalOpen && "blur-md"
       } `}
     >
@@ -20,10 +20,10 @@ export default function Home() {
         Register to create
       </p>
       <div className="mb-1">
-      <Form
-        isOtpModalOpen={isOtpModalOpen}
-        setIsOtpModalOpen={setIsOtpModalOpen}
-      />
+        <Form
+          isOtpModalOpen={isOtpModalOpen}
+          setIsOtpModalOpen={setIsOtpModalOpen}
+        />
       </div>
       <img
         src={asset1}

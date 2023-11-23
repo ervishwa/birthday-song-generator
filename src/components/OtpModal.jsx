@@ -55,7 +55,7 @@ export default function OtpModal({ isOpen, onRequestClose, onSubmit }) {
             name="Submit"
             onClick={handleSubmit}
             theme="secondary"
-            size="xs"
+            size="lg"
             disabled={!isOtpValid}
           ></Button>
           {!isOtpValid && (

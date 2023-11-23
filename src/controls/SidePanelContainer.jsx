@@ -6,7 +6,7 @@ export default function SidePanelContainer({
   return (
     <>
       <div
-        className="fixed top-0 right-0 w-full h-screen bg-red-200 opacity-50 z-10"
+        className="fixed top-0 right-0 w-full h-screen bg-blue-10 opacity-70 z-10"
         onClick={handelClick}
       />
       <div
