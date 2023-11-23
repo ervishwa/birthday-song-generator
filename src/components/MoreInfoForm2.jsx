@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import Button from "../controls/Button";
+import * as Yup from "yup";
 import { UserContext } from "../context/UserContextProvider";
 
 export default function MorewInfoForm2() {
@@ -12,10 +13,26 @@ export default function MorewInfoForm2() {
 
   const formik = useFormik({
     initialValues: {
-      whatMakeSmile: "xxxxxxxxxxx",
-      favouriteMovie: "xxxxxxxxx",
-      favouriteSport: "xxxxxxxxx",
+      whatMakeSmile: "",
+      favouriteMovie: "",
+      favouriteSport: "",
     },
+    validationSchema: Yup.object({
+      whatMakeSmile: Yup.string().matches(
+        /^[A-Za-z\s]+$/,
+        "Only alphabet characters are allowed"
+      ),
+
+      favouriteMovie: Yup.string().matches(
+        /^[A-Za-z\s]+$/,
+        "Only alphabet characters are allowed"
+      ),
+
+      favouriteSport: Yup.string().matches(
+        /^[A-Za-z\s]+$/,
+        "Only alphabet characters are allowed"
+      ),
+    }),
     onSubmit: (values) => {
       console.log("Form data submitted:", values);
       setWhatMakeSmile(values.whatMakeSmile);
@@ -41,6 +58,7 @@ export default function MorewInfoForm2() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.whatMakeSmile}
+          placeholder="xxxxxxxxxxxxx"
           className="w-full my-2 px-5 py-4 rounded-3xl font-gibsonsemibold text-gray-400"
         />
         {formik.touched.whatMakeSmile && formik.errors.whatMakeSmile ? (
@@ -61,6 +79,7 @@ export default function MorewInfoForm2() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.favouriteMovie}
+          placeholder="xxxxxxxxxxxxx"
           className="w-full my-2 px-5 py-4 rounded-3xl font-gibsonsemibold text-gray-400"
         />
         {formik.touched.favouriteMovie && formik.errors.favouriteMovie ? (
@@ -81,6 +100,7 @@ export default function MorewInfoForm2() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.favouriteSport}
+          placeholder="xxxxxxxxxxxxx"
           className="w-full my-2 px-5 py-4 rounded-3xl font-gibsonsemibold text-gray-400"
         />
         {formik.touched.favouriteSport && formik.errors.favouriteSport ? (

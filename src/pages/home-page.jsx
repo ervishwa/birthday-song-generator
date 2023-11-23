@@ -27,7 +27,7 @@ export default function Home() {
       </div>
       <img
         src={asset1}
-        className="absolute left-1 bottom-12 md:left-20"
+        className="absolute left-1 bottom-5 md:left-20"
         alt="ASEET"
       />
       <img

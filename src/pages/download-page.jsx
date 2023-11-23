@@ -10,6 +10,8 @@ import Button from "../controls/Button";
 import progressbar5 from "../ui-images/progress-bar5.png";
 import birthdaySong from "../audio/birthday-song.mp3";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContextProvider";
 
 export default function DownloadPage() {
   const navigate = useNavigate();
@@ -17,6 +19,8 @@ export default function DownloadPage() {
   const handelCreateAgain = () => {
     navigate("/info");
   };
+
+  const { name } = useContext(UserContext);
 
   const handleDownload = async () => {
     try {
@@ -36,7 +40,7 @@ export default function DownloadPage() {
   };
 
   return (
-    <div className="p-2 h-[91vh]">
+    <div className="p-2 h-full">
       <img src={progressbar5} className="mx-auto w-64" alt="" />
       <p className="text-3xl text-white text-center m-5">
         Your unique song is ready!
@@ -49,7 +53,7 @@ export default function DownloadPage() {
         </div>
         <div className="border border-yellow-500 flex flex-col items-center rounded-3xl overflow-hidden">
           <p className="text-pale-yellow text-center mt-8">
-            Happy Birthday Ronit!
+            Happy Birthday {name}!
           </p>
           <div className="flex flex-col justify-center items-center relative mb-8">
             <img src={celebrationbg} alt="" />
@@ -62,7 +66,7 @@ export default function DownloadPage() {
           </div>
 
           <p className="text-white text-3xl w-3/4 text-center">
-            It's your boy. gotta give a shoutout to Ronit.
+            It's your boy. gotta give a shoutout to {name}.
           </p>
 
           <div className="flex mt-8 w-full  overflow-hidden">

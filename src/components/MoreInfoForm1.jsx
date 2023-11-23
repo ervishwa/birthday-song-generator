@@ -13,14 +13,14 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
 
   const formik = useFormik({
     initialValues: {
-      petName: "xxxxxxxxxxxxxxx",
-      makesAngry: "xxxxxxxxxx",
-      funniestThing: "xxxxxxxxxxx",
+      petName: "",
+      makesAngry: "",
+      funniestThing: "",
     },
     validationSchema: Yup.object({
       petName: Yup.string()
         .matches(/^[A-Za-z\s]+$/, "Only alphabet characters are allowed")
-        .required("Full Name is required"),
+        .required("petname is required"),
       makesAngry: Yup.string()
         .matches(/^[A-Za-z\s]+$/, "Only alphabet characters are allowed")
         .required("this field is required"),
@@ -52,6 +52,7 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.petName}
+          placeholder="xxxxxxxxxxxxx"
           className="w-full my-2 px-5 py-4 rounded-3xl text-gray-400"
         />
         {formik.touched.petName && formik.errors.petName ? (
@@ -72,6 +73,7 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.makesAngry}
+          placeholder="xxxxxxxxxxxxx"
           className="w-full my-2 px-5 py-4 rounded-3xl text-gray-400"
         />
         {formik.touched.makesAngry && formik.errors.makesAngry ? (
@@ -92,6 +94,7 @@ export default function MorewInfoForm1({ handelAnswerMore }) {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.funniestThing}
+          placeholder="xxxxxxxxxxxxx"
           className="w-full my-2 px-5 py-4 rounded-3xl text-gray-400"
         />
         {formik.touched.funniestThing && formik.errors.funniestThing ? (
